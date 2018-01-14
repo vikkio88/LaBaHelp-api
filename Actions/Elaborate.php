@@ -13,7 +13,7 @@ class Elaborate extends ApiAction
         $words = str_word_count($this->getJsonRequestBody()['text'], 1);
         $exceptions = Config::get('exceptions.list');
         $words = array_filter($words, function ($word) use ($exceptions) {
-            return !in_array(strtolower($word), $exceptions);
+            return strlen($word) > 1 && !in_array(strtolower($word), $exceptions);
         });
         $counting = [];
         foreach ($words as $word) {
