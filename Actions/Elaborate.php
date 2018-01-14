@@ -4,13 +4,15 @@ namespace App\Actions;
 
 use App\Lib\Helpers\Config;
 use App\Lib\Slime\RestAction\ApiAction;
+use App\Models\Log;
 
 class Elaborate extends ApiAction
 {
     protected function performAction()
     {
         $text = $this->getJsonRequestBody()['text'];
-        $words = str_word_count($this->getJsonRequestBody()['text'], 1);
+        $body = $this->getJsonRequestBody();
+        $words = str_word_count($body['text'], 1);
         $exceptions = Config::get('exceptions.list');
         $words = array_filter($words, function ($word) use ($exceptions) {
             return strlen($word) > 1 && !in_array(strtolower($word), $exceptions);
@@ -30,6 +32,19 @@ class Elaborate extends ApiAction
                 'count' => $count
             ];
         }
+
+        try {
+            Log::create(array_merge(
+                $body,
+                [
+                    'ip' => $this->request->getAttribute('ip_address'),
+                    'result' => json_encode($result)
+                ]
+            ));
+        } catch (\Exception $e) {
+            //yummy yummy
+        }
+
         $this->payload = $result;
     }
 }
