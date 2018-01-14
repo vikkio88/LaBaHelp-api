@@ -17,10 +17,10 @@ class Elaborate extends ApiAction
         });
         $counting = [];
         foreach ($words as $word) {
-            if (!isset($counting[$word])) {
-                $counting[$word] = 0;
+            if (isset($counting[$word])) {
+                continue;
             }
-            $counting[$word] += substr_count($text, $word);
+            $counting[$word] = substr_count($text, $word);
         }
         arsort($counting);
         $result = [];
