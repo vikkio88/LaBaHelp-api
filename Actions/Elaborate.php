@@ -15,15 +15,21 @@ class Elaborate extends ApiAction
         $words = array_filter($words, function ($word) use ($exceptions) {
             return !in_array(strtolower($word), $exceptions);
         });
-        $result = [];
+        $counting = [];
         foreach ($words as $word) {
-            if (!isset($result[$word])) {
-                $result[$word] = 0;
+            if (!isset($counting[$word])) {
+                $counting[$word] = 0;
             }
-            $result[$word] += substr_count($text, $word);
+            $counting[$word] += substr_count($text, $word);
         }
-
-        arsort($result);
+        arsort($counting);
+        $result = [];
+        foreach ($counting as $value => $count) {
+            $result[] = [
+                'value' => $value,
+                'count' => $count
+            ];
+        }
         $this->payload = $result;
     }
 }
