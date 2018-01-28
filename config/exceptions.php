@@ -2,7 +2,7 @@
 
 
 return [
-    'list' => [
+    'words' => [
         "a",
         "about",
         "above",
@@ -109,5 +109,6 @@ return [
         "ought",
         "our",
         "ours",
-    ]
+    ],
+    'punctuation' => [', ', '.', '. ', '; ', '? ', '! ', '- ', "\n", "(", ")"]
 ];

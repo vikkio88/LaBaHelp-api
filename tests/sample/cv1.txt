@@ -1,0 +1,13 @@
+My main skills are in computer science as a developer. I have an advanced knowledge of GNU/Linux operating systems (os which I prefer), but also good experience in Microsoft Windows (both server and desktop). I know and use many programming languages, among them I have a strong working knowledge of C# and PHP, thanks to my work experience in the field of web programming.
+
+Lately, most of my roles are related to PHP (>=5.6 and 7), and in my current position I am using Laravel 5.1, with DingoAPI to build a huge set of APIs (RESTful style).
+
+In relation to PHP, I have used it with and without frameworks with the framework I have used the most being Laravel. However I also have a knowledge of PHP in the original method of programming, with OOP programming and MYSQL or PostgreSQL dbms usage for web applications. I have also used xHTML and CSS, Bootstrap, for the templates and other Javascript frameworks like JQuery interaction in web pages.
+
+In a previous experience, I was using C# to develop RESTful services based on the ASP.NET MVC framework, with Visual Studio; deployed on IIS and using MsSqlServer.
+
+My strongest knowledge regarding servers, and OS in general, is about Ubuntu (or Debian based distro) platforms. I have a good knowledge of languages like RegExp and DOM management for web data mining purposes
+
+I have picked up a number of skills during previous roles, in addition to the technical experience I have I also enjoy writing. I have written some press releases, published by an Italian Hacking Ezine. Those papers are available in the website mirror, and they are in italian.
+
+I would say that my greatest skills are in BackEnd Programming and I also have some experience as a Desktop and Web developer with other programming languages like C/C++, Java, Ruby, Bash, Perl, Python and C# (WinForm). I'm also interested in hardware programming with programmable boards like Arduino and RaspberryPi.
