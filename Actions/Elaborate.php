@@ -22,6 +22,7 @@ class Elaborate extends ApiAction
             ]
         );
         $result = $cvReader->skim();
+
         try {
             Log::create(array_merge(
                 $body,
@@ -34,6 +35,21 @@ class Elaborate extends ApiAction
             //yummy yummy
         }
 
-        $this->payload = $result;
+        $normalizedResult = [];
+        foreach ($result as $category => $subresult) {
+            $temp = [
+                'name' => $category,
+                'results' => []
+            ];
+            foreach ($subresult as $value => $count) {
+                $temp['results'][] = [
+                    'value' => $value,
+                    'count' => $count,
+                ];
+            }
+            $normalizedResult[] = $temp;
+        }
+
+        $this->payload = $normalizedResult;
     }
 }

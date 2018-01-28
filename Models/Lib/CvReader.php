@@ -45,7 +45,6 @@ class CvReader
         foreach ($tokens as $token => $count) {
             foreach ($this->filters as $category => $subcategories) {
                 foreach ($subcategories as $label => $stack) {
-                    echo PHP_EOL . $label . " " . $token . PHP_EOL;
                     if (in_array($token, $stack)) {
                         $total = $map[$category][$label] ?? 0;
                         $total += $count;
